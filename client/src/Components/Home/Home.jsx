@@ -10,7 +10,11 @@ export default function Home() {
     return (
         <div>
             <Navbar />
-            <Grid title="Home"/>
+            <div className="relleno">
+                <h1>
+                    Home
+                </h1>
+            </div>
         </div>
     )
 }

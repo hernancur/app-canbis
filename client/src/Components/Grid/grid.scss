@@ -1,4 +1,4 @@
-.container {
+.grid {
     z-index: -1;
     width: 100%;
     display: flex;
@@ -7,8 +7,9 @@
     
 }
 
+
 @media all and (max-width: 500px) {
-    .container {
+    .grid {
       /* On small screens, we are no longer using row direction but column */
         flex-direction: column;
     }

@@ -19,12 +19,14 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
-const { Flower } = require("./src/db");
-const { charge } = require("./src/helpers/constants");
+const { Flower, SeedCompanie } = require("./src/db");
+const { chargeFlowers, chargeCompanies} = require("./src/helpers/constants");
 // Syncing all the models at once.
 conn.sync({ force: false }).then(async () => {
   const findFlowers = await Flower.findAll();
-  if (!findFlowers.length) charge();
+  if (!findFlowers.length) chargeFlowers();
+  const findCompanies = await SeedCompanie.findAll();
+  if (!findCompanies.length) chargeCompanies();
   server.listen(3001, () => {
     console.log("Listening at 3001"); // eslint-disable-line no-console
   });

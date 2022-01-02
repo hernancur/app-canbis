@@ -3,10 +3,10 @@ import * as api from "./api.js";
 
 export const getSeedCompanies = () => async (dispatch) => {
     try {
-        const { data } = await api.fetchSeedCompanies();
+        const res = await api.fetchSeedCompanies();
         dispatch({
             type: types.GET_SEED_COMPANIES,
-            payload: data
+            payload: res.data.companies
         })
     } catch (err) {
         console.log(err);
@@ -15,10 +15,11 @@ export const getSeedCompanies = () => async (dispatch) => {
 
 export const getStrains = () => async (dispatch) => {
     try {
-        const { data } = await api.fetchStrains();
+        const res = await api.fetchStrains();
+        console.log(res.data);
         dispatch({
             type: types.GET_STRAINS,
-            payload: data
+            payload: res.data.strains
         })
     } catch (err) {
         console.log(err);
@@ -27,10 +28,11 @@ export const getStrains = () => async (dispatch) => {
 
 export const getFlowers = () => async (dispatch) => {
     try {
-        const { data } = await api.fetchFlowers();
+        const res = await api.fetchFlowers();
+        console.log(res.data)
         dispatch({
             type: types.GET_FLOWERS,
-            payload: data
+            payload: res.data.flowers
         })
     } catch (err) {
         console.log(err);

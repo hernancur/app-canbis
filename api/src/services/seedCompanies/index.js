@@ -8,26 +8,9 @@ var counter = 0;
 class SeedCompanieService {
   static async get(req, res, next) {
     try {
-      let companies = [];
-      if (counter === 0) {
-        const apiCompanies = await axios.get(COMPANIES_GET_API);
-        companies = apiCompanies.data.data?.map((c) => {
-          return {
-            name: c.name,
-            image: c.image,
-            url: c.url,
-            lineage: c.lineage,
-            qr: c.qr,
-            description: c.description,
-          };
-        });
-        await SeedCompanie.bulkCreate(companies);
-        counter = 999;
-      }
+      const companies = await SeedCompanie.findAll();
 
-      let finalCompanies = [...companies, ...(await SeedCompanie.findAll())];
-
-      res.json({ message: "Success!", companies: finalCompanies });
+      res.json({ message: "Success!", companies: companies });
     } catch (error) {
       return next(error);
     }

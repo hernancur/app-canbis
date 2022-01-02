@@ -4,6 +4,7 @@ import Seeds from "./Components/Seeds/Seeds.jsx"
 import Flowers from "./Components/Flowers/Flowers.jsx"
 import Strains from "./Components/Strains/Strains.jsx"
 
+
 import {
   BrowserRouter as Router,
   Switch,

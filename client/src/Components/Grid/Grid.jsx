@@ -4,23 +4,13 @@ import Card from "./Card/Card.jsx"
 
 export default function Grid(props) {
     return (
-        <div className="container">
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
-            <Card title={props.title}/>
+        <div className="grid">
+            {
+                props.data && 
+                    props.data.map((card, i) => {
+                        <Card title={card.name.split(" - ")[0]} image={card.image} key={i}/>
+                    })
+            }¡
         </div>
     )
 }

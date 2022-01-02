@@ -1,11 +1,11 @@
 const axios = require("axios");
-const { Flower } = require("../db");
+const { Flower, SeedCompanie } = require("../db");
 
 const FLOWER_GET_API = "https://api.otreeba.com/v1/flowers";
 
 const COMPANIES_GET_API = "https://api.otreeba.com/v1/seed-companies";
 
-const charge = async (req, res, next) => {
+const chargeFlowers = async (req, res, next) => {
   try {
     const aux = await axios.get(FLOWER_GET_API);
 
@@ -19,7 +19,29 @@ const charge = async (req, res, next) => {
 
     await Flower.bulkCreate(reset);
 
-    res.send("ok");
+    res.send("flowers created");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const chargeCompanies = async (req, res, next) => {
+  try {
+    const apiCompanies = await axios.get(COMPANIES_GET_API);
+
+    companies = apiCompanies.data.data?.map((c) => {
+          return {
+            name: c.name,
+            image: c.image,
+            url: c.url,
+            lineage: c.lineage,
+            qr: c.qr,
+            description: c.description,
+          };
+        });
+      await SeedCompanie.bulkCreate(companies);
+
+    res.send("companies created");
   } catch (error) {
     console.log(error);
   }
@@ -27,6 +49,7 @@ const charge = async (req, res, next) => {
 
 module.exports = {
   FLOWER_GET_API,
-  charge,
+  chargeFlowers,
+  chargeCompanies,
   COMPANIES_GET_API,
 };

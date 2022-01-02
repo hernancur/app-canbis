@@ -6,11 +6,13 @@ $white : #fff;
     color: $gray;
     font-size: 14px;
     position: fixed;
+    display: flex;
     top: 0;
     width: 100%;
     z-index: 1;
     background: linear-gradient(to top, transparent 0%, rgb(0,0,0,0.3) 90%);
     background-color: $white;
+    margin-bottom: 200px;
 
     &.scrolled {
         background-color: $gray;
