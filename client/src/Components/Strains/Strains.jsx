@@ -1,12 +1,12 @@
 import React from 'react'
-import Grid from '../Grid/Grid.jsx';
+import Grid from '../Grid/Grid.jsx'
 import Navbar from "../Navbar/Navbar.jsx"
 
-export default function Flowers() {
+export default function Strains() {
     return (
         <div>
             <Navbar />
-            <Grid title="Flowers" />
+            <Grid title="Strains"/>
         </div>
     )
 }

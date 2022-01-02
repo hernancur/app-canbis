@@ -1,5 +1,9 @@
 import './App.scss'
 import Home from "./Components/Home/Home.jsx"
+import Seeds from "./Components/Seeds/Seeds.jsx"
+import Flowers from "./Components/Flowers/Flowers.jsx"
+import Strains from "./Components/Strains/Strains.jsx"
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,16 +19,13 @@ export default function App() {
             <Home />
           </Route>
           <Route path='/seed-companies' >
-            <h1>WIP</h1>
-            <h2>seed companies</h2>
+            <Seeds />
           </Route>
           <Route path='/strains' >
-            <h1>WIP</h1>
-            <h2>strains</h2>
+            <Strains />
           </Route>
           <Route path='/flowers' >
-            <h1>WIP</h1>
-            <h2>flowers</h2>
+            <Flowers />
           </Route>
         </Switch>
       </Router>

@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <div>
             <Navbar />
-            <Grid />
+            <Grid title="Home"/>
         </div>
     )
 }
