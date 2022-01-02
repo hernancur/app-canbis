@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "seed-companie",
+    "seedCompanie",
     {
       id: {
         type: DataTypes.UUID,
@@ -22,14 +22,14 @@ module.exports = (sequelize) => {
         unique: true,
       },
       lineage: {
-        type: DataTypes.ARRAY(DataTypes.STRING),
+        type: DataTypes.JSON,
       },
       qr: {
         type: DataTypes.STRING,
         unique: true,
       },
       description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
       },
     },
     {

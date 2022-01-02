@@ -75,3 +75,25 @@
 ```
 
 ---
+
+---
+
+## SEED COMPANIES
+
+### GET - http://localhost:3001/seed-companies/
+
+#### Espera recibir una solicitud GET
+
+#### Devuelve un arreglo con objetos de seed-companies
+
+```javascript
+[{...},{...},{...}]
+```
+
+### POST - http://localhost:3001/seed-companies/create
+
+#### Espera recibir por body las propiedades del objeto Strain:
+
+#### Devuelve el objeto creado
+
+---

@@ -3,6 +3,8 @@ const { Flower } = require("../db");
 
 const FLOWER_GET_API = "https://api.otreeba.com/v1/flowers";
 
+const COMPANIES_GET_API = "https://api.otreeba.com/v1/seed-companies";
+
 const charge = async (req, res, next) => {
   try {
     const aux = await axios.get(FLOWER_GET_API);
@@ -26,4 +28,5 @@ const charge = async (req, res, next) => {
 module.exports = {
   FLOWER_GET_API,
   charge,
+  COMPANIES_GET_API,
 };
