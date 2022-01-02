@@ -22,6 +22,8 @@ class SeedCompanieService {
 
       if (error) return res.status(400).json({ message: error });
 
+      const { name, image, url, lineage, qr, description } = req.body;
+
       const [newSeedCompany] = await SeedCompanie.findOrCreate({
         where: {
           name,
