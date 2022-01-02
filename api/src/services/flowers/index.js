@@ -1,5 +1,3 @@
-const axios = require("axios");
-const { FLOWER_GET_API } = require("../../helpers/constants");
 const { Flower } = require("../../db.js");
 
 class FlowerService {
