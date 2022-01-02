@@ -3,7 +3,10 @@ import React from 'react'
 import Navbar from "../Navbar/Navbar.jsx"
 import Grid from "../Grid/Grid.jsx"
 
+
 export default function Home() {
+    
+
     return (
         <div>
             <Navbar />
