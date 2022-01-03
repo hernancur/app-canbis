@@ -1,4 +1,5 @@
 const { Flower } = require("../../db.js");
+const { flowerValidation } = require("../../validations/index.js");
 
 class FlowerService {
   static async get(req, res, next) {
@@ -13,10 +14,11 @@ class FlowerService {
 
   static async findCreate(req, res, next) {
     try {
-      const { name, image, info } = req.body;
+      const { error } = flowerValidation.validate(req.body);
 
-      if (!name || !image || !info)
-        res.json({ error: "Missing properties to create new flower" });
+      if (error) return res.status(400).json({ message: error });
+
+      const { name, image, info } = req.body;
 
       const [newFlower] = await Flower.findOrCreate({
         where: {

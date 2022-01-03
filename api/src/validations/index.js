@@ -9,4 +9,15 @@ const seedCompanieValidation = Joi.object({
   description: Joi.string().optional(),
 });
 
-module.exports = { seedCompanieValidation };
+const strainValidation = Joi.object({
+  name: Joi.string().required(),
+  url: Joi.string().required(),
+});
+
+const flowerValidation = Joi.object({
+  name: Joi.string().required(),
+  image: Joi.string().required(),
+  info: Joi.string().required(),
+});
+
+module.exports = { seedCompanieValidation, strainValidation, flowerValidation };

@@ -13,10 +13,11 @@ class StrainService {
 
   static async findCreate(req, res, next) {
     try {
-      const { name, url } = req.body;
+      const { error } = strainValidation.validate(req.body);
 
-      if (!name || !url)
-        res.json({ error: "Missing properties to create new strain" });
+      if (error) return res.status(400).json({ message: error });
+
+      const { name, url } = req.body;
 
       const [newStrain] = await Strain.findOrCreate({
         where: {
