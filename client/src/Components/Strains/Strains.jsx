@@ -1,5 +1,4 @@
 import React from 'react'
-import Grid from '../Grid/Grid.jsx'
 import Navbar from "../Navbar/Navbar.jsx"
 import * as actions from "../../Actions/actions.js"
 import { useDispatch, useSelector } from "react-redux"

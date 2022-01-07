@@ -9,10 +9,9 @@ $white : #fff;
     display: flex;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 9999;
     background: linear-gradient(to top, transparent 0%, rgb(0,0,0,0.3) 90%);
     background-color: $white;
-    margin-bottom: 200px;
 
     &.scrolled {
         background-color: $gray;
@@ -51,7 +50,7 @@ $white : #fff;
                 align-items: center;
                 justify-content: center;
                 margin-right: 25px;
-
+                
                 .icon {
                     width: 40px;
                     height: 40px;
@@ -90,6 +89,7 @@ $white : #fff;
                 height: 20px;
                 border: none;
                 color: $white;
+                text-align: right;
 
                 &.scrolled {
                     background-color: $white;

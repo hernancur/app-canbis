@@ -1,10 +1,7 @@
-.grid {
-    z-index: -1;
+.container {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    
+    display: block;
+    top: -70px; 
 }
 
 @media all and (max-width: 500px) {

@@ -10,9 +10,7 @@ export default function Navbar() {
     const [Scroll, setScroll] = React.useState(false);
 
     window.onscroll = () => {
-        console.log(window.pageYOffset)
         setScroll(window.pageYOffset === 0 ? false : true);
-        console.log(Scroll)
         return () => window.onscroll = null;
     }
 
@@ -45,7 +43,7 @@ export default function Navbar() {
                         <span>Favorites</span>
                     </Link>
                 </div>
-            </div>  
+            </div>
         </div>
     )
 }

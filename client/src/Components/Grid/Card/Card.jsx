@@ -1,14 +1,14 @@
 import React from 'react'
 import "./card.scss"
 
-export default function Card(props) {
+export default function Card({image, title}) {
     return (
         <div className="card">
             <div className="cardImg">
-                <img src={props.image} alt="" />
+                <img src={image} alt="" />
             </div>
             <div className="cardTitle titleWhite">
-                <p>{props.title}</p>
+                <p>{title}</p>
             </div>
         </div>
     )
