@@ -36,12 +36,18 @@ export default function Home() {
                         </h1>
                         
                 </div>
-                <div className="button">
-                            <button className={started ? "btn getStarted hidden" : "btn getStarted"} onClick={getStarted}>
-                                Get Started
-                            </button>
-                        </div>
-                <div className={started ? "container" : "container hidden"}>
+                {
+                    !started ?
+
+                    <div className="button">
+                    <button className="btn getStarted" onClick={getStarted}>
+                        Get Started
+                    </button>
+                    </div>
+
+                    :
+
+                <div className="container">
                     
                     <form onSubmit={handleSubmit(onSubmit)} className="form">    
                         <div className="brand">
@@ -71,6 +77,7 @@ export default function Home() {
                         </div>
                     </form>
                 </div>
+                }
             </div>
             <div className="info">
                 <h1>

@@ -15,12 +15,13 @@ $gray: #9b9b9b;
         
 
         .container {
-            position:absolute;
-            width: 20vw;
+            position:relative;
+            width: 31vw;
             height: 60vh;
-            top: 15vh;
-            right: 18vw;
+            right: 13vw;
             z-index: 3;
+            margin-left: 1.25vw;
+            padding-left: 8vw;
 
             &.hidden {
                 display: none;
